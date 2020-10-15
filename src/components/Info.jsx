@@ -16,8 +16,6 @@ function Info() {
     const [type, setType] = useState('');
     const [id, setId] = useState('');
     const [html_url, setUrl] = useState('')
-      
-
     useEffect(() => {
         fetch("https://api.github.com/users/Camilo95VP/repos")
         .then (res => res.json())
@@ -26,7 +24,6 @@ function Info() {
             setData(data);
         });
     }, []);
-
     const setData = ({ 
         name, 
         login, 
@@ -48,11 +45,9 @@ function Info() {
         setId(id)
         setUrl(html_url)
     };
-
     const handleSearch = (e) => {
         setUserInput(e.target.value)
     }
-
     const handleSubmit = () => {
         fetch(`https://api.github.com/users/${userInput}`)
         .then(res => res.json())
@@ -80,28 +75,28 @@ function Info() {
             { error ? (<h1>{error}</h1>) : (<div className="card">
               <Card>
                   <Image src={avatar} wrapped ui={false} />
-                  <Card.Content>
-                <Card.Header>{name} </Card.Header>
-                <Card.Header>{userName} </Card.Header>
-                </Card.Content>
-                <Card.Content extra>
-                  <a>
-                     <Icon name='user' />
-                     {followers} Followers
-                  </a>
-                </Card.Content>
-                <Card.Content extra>
-                  <a>
-                     <Icon name='user' />
-                     {repos} Repositorios
-                  </a>
-                </Card.Content>
-                <Card.Content extra>
-                  <a>
-                     <Icon name='user' />
-                     {following} Following
-                  </a>
-                </Card.Content>
+                    <Card.Content>
+                      <Card.Header>{name}</Card.Header>
+                      <Card.Header>{userName}</Card.Header>
+                    </Card.Content>
+                  <Card.Content extra>
+                     <a>
+                       <Icon name='user' />
+                        {followers} Followers
+                     </a>
+                  </Card.Content>
+                  <Card.Content extra>
+                     <a>
+                       <Icon name='user' />
+                       {repos} Repositorios
+                     </a>
+                  </Card.Content>
+                  <Card.Content extra>
+                     <a>
+                       <Icon name='user' />
+                       {following} Following
+                     </a>
+                  </Card.Content>
               </Card>
             </div>)}
             <Table striped bordered hover>

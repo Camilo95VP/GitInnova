@@ -8,19 +8,15 @@
     display: flex;
     border-radius: 100px
   }
-  
   .container .btnLogin{
     margin-top: 9px;
   }
-  
   .btnLogin:hover{
     background-color: #313131;
   }
-  
   .btnLogin{
     font-weight: bold !important;
   }
-  
   .loginContainer{
   background-color: rgb(230, 230, 230);
   width: 350px;
@@ -29,8 +25,7 @@
   border: 1px solid rgb(204, 204, 204);
   border-radius: 20px;
   }
-
-div form input{
+  div form input{
   padding: 10px;
   border: none;
 }

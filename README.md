@@ -1,3 +1,5 @@
+A simple App done with ReactJS, API rest of GitHub, Academy Geek, you can search anything user of gitHub, for his install you should follow the next indications:
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

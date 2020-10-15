@@ -12,7 +12,6 @@ export default class Form extends Component {
       text: "Por favor ingresa los datos del formulario"
     });
   }
-  
   constructor(props) {
         super(props);
         this.state = {
@@ -28,17 +27,14 @@ export default class Form extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
-    
       handleChange = e => {
         this.setState({
           form: { ...this.state.form, [e.target.name]: e.target.value }
         });
         console.log(this.state.form)
       };
-    
       handleSubmit = e => {
         e.preventDefault();
-        
           const cookies = new Cookies();
           cookies.set('Nombre', `${e.target.nombre.value}`, {path: '/'});
           cookies.set('Apellidos', `${e.target.apellidos.value}`, {path: '/'});
@@ -47,11 +43,9 @@ export default class Form extends Component {
           cookies.set('Correo', `${e.target.correo.value}`, {path: '/'});
           cookies.set('UsuarioGit', `${e.target.usuariogit.value}`, {path: '/'});
           window.location.href='./dashboard';
-       
-      };
+       };
     
       render() {
-        
         return (
           <>
           <Navbar/>

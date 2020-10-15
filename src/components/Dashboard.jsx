@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Cookies from 'universal-cookie';
 import swal from 'sweetalert';
 import "./styles/Dashboard.css"
-import Navbar from './Navbar';
+import Navbar from './Navbar'
 
 export default class Dashboard extends Component {
     render() {

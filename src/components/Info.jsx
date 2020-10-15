@@ -15,7 +15,7 @@ function Info() {
     const [error, setError] = useState(null);
     const [type, setType] = useState('');
     const [id, setId] = useState('');
-    const [html_url, setUrl] = useState('');
+    const [html_url, setUrl] = useState('')
       
 
     useEffect(() => {

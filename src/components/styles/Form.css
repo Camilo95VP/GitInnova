@@ -6,7 +6,7 @@
     padding: var(--espaciado);
     background-color: var(--whiteColor);
     display: flex;
-    border-radius: 100px;
+    border-radius: 100px
   }
   
   .container .btnLogin{

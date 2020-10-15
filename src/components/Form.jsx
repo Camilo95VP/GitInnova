@@ -9,7 +9,7 @@ export default class Form extends Component {
   componentDidMount(){
     swal({
       title: "Hola, Bienvenid@ a GITINNOVA",
-      text: "Por favor ingresa los datos del formulario",
+      text: "Por favor ingresa los datos del formulario"
     });
   }
   

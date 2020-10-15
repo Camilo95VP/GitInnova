@@ -2,16 +2,27 @@ import React, { Component } from 'react'
 import '../components/styles/Form.css';
 import Cookies from 'universal-cookie';
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
+import Navbar from './Navbar';
+import swal from 'sweetalert';
 
 export default class Form extends Component {
-    constructor(props) {
+  componentDidMount(){
+    swal({
+      title: "Hola, Bienvenid@ a GITINNOVA",
+      text: "Por favor ingresa los datos del formulario",
+    });
+  }
+  
+  constructor(props) {
         super(props);
         this.state = {
           form: {
-            nombre: '',
-            apellidos: ''
+            nombre: "",
+            apellidos: "",
+            cedula: "",
+            fechaNac: "",
+            correo: "",
+            usuarioGit: ""
           }
         };
         this.handleChange = this.handleChange.bind(this);
@@ -29,15 +40,21 @@ export default class Form extends Component {
         e.preventDefault();
         
           const cookies = new Cookies();
-          cookies.set('Nombre', `${this.state.nombre}`, {path: '/'});
-          cookies.set('Apellidos', `${this.state.apellidos}`, {path: '/'});
-          cookies.set('rolUsuario', 'Administrador', {path: '/'});
+          cookies.set('Nombre', `${e.target.nombre.value}`, {path: '/'});
+          cookies.set('Apellidos', `${e.target.apellidos.value}`, {path: '/'});
+          cookies.set('Cedula', `${e.target.cedula.value}`, {path: '/'});
+          cookies.set('FechaNacimiento', `${e.target.fecha.value}`, {path: '/'});
+          cookies.set('Correo', `${e.target.correo.value}`, {path: '/'});
+          cookies.set('UsuarioGit', `${e.target.usuariogit.value}`, {path: '/'});
           window.location.href='./dashboard';
-    
+       
       };
     
       render() {
+        
         return (
+          <>
+          <Navbar/>
           <div className="container">
             <div className="loginContainer">
               <form onSubmit={this.handleSubmit}>
@@ -68,13 +85,14 @@ export default class Form extends Component {
                 <br />
                 <label htmlFor="usuariogit"><h5>Usuario GitHub:</h5></label>
                 <br />
-                <input id="pwd" name="usuariogit" type="text" placeholder="Nombre Usuario"onChange={this.handleChange}/>
+                <input id="pwd" name="usuariogit" type="text" placeholder="Nombre Usuario" required onChange={this.handleChange}/>
                 <br />
                 <br />
                 <input type="submit" className="btn btn-success btnLogin" value="Enviar"/>
               </form>
             </div>
           </div>
+          </>
         );
       }
     }
